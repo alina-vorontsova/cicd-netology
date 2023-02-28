@@ -18,7 +18,7 @@ jobs:
       DB_PORT: ${{ secrets.DB_PORT }}
       SSH_HOST: ${{ secrets.SSH_HOST }}
       SSH_USER: ${{ secrets.SSH_USER }}
-      SSH_PASSWORD: $ {{ secrets.SSH_PASSWORD }}
+      SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
     services:
       postgres_main:
         image: postgres:12
@@ -65,5 +65,5 @@ jobs:
         with: 
           host: ${{ env.SSH_HOST }}
           username: ${{ env.SSH_USER }}
-          password: $ {{ env.SSH_PASSWORD }}
+          password: ${{ env.SSH_PASSWORD }}
           script: expect /home/alina/django_cicd/pull.exp
