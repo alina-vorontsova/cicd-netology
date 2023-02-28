@@ -16,6 +16,9 @@ jobs:
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_PORT: ${{ secrets.DB_PORT }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_PASSWORD: $ {{ secrets.SSH_PASSWORD }}
     services:
       postgres_main:
         image: postgres:12
@@ -60,7 +63,7 @@ jobs:
       - name: Развёртывание проекта
         uses: appleboy/ssh-action@master
         with: 
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: $ {{ secrets.SSH_PASSWORD }}
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          password: $ {{ env.SSH_PASSWORD }}
           script: expect /home/alina/django_cicd/pull.exp
