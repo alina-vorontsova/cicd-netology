@@ -1,0 +1,5 @@
+#!/bin/bash/expect
+spawn /home/alina/django_cicd/pull.sh
+expect "password"
+send -- "alina\r"
+expect eof
