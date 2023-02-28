@@ -25,4 +25,4 @@ class StockViewSet(ModelViewSet):
 
 class TestView(APIView):
     def get(self, request):
-        return Response('Я - тестовая вьюшка версии 2.0')
+        return Response('Я - тестовая вьюшка версии 3.0')
